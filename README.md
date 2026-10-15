@@ -10,6 +10,8 @@ just dev         # local development
 just build       # build to dist/
 just preview     # build and serve dist/
 just og-image    # render public/og-image.jpg from tool/og-image.html (needs Chrome; pass another browser path as argument)
+just screenshots # with preview running: every page at 390 and 1280 px, mid-scroll frames and reduced motion, into .screenshots/
+just lighthouse  # with preview running: Lighthouse on mobile and desktop, into .screenshots/lighthouse/
 just deploy      # build and npx wrangler deploy
 ```
 
