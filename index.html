@@ -30,6 +30,8 @@
     <meta name="twitter:image" content="https://masmus.larri.dev/og-image.jpg" />
     <meta name="twitter:image:alt" content="Más Mus: dos naipes sobre el tapete verde y el lema «Mus de verdad en el móvil»" />
 
+    <script>document.documentElement.classList.add("js")</script>
+
     <link rel="preload" href="/fonts/YoungSerif-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/AlegreyaSans-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -47,40 +49,43 @@
     }
     </script>
   </head>
-  <body class="felt text-ink font-sans text-lg antialiased overflow-x-hidden">
+  <body class="felt text-ink font-sans text-lg antialiased overflow-x-clip">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-card focus:px-4 focus:py-2 focus:text-card-ink">Saltar al contenido</a>
+    <div class="absolute top-0 left-0 h-6 w-px" data-top aria-hidden="true"></div>
 
-    <header class="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 pt-5">
-      <a href="/" class="flex items-center gap-3" aria-label="Más Mus, inicio">
-        <img src="/icon.webp" alt="" width="40" height="40" class="h-10 w-10 rounded-[10px] shadow-md" />
-        <span class="font-display text-2xl leading-none">Más Mus</span>
-      </a>
-      <nav aria-label="Secciones" class="hidden sm:flex items-center gap-7 text-base font-bold text-ink-dim">
-        <a href="#por-que" class="hover:text-ink transition-colors">Por qué</a>
-        <a href="#rivales" class="hover:text-ink transition-colors">Los bots</a>
-        <a href="#mesa" class="hover:text-ink transition-colors">La mesa</a>
-      </nav>
+    <header class="site-header" data-header>
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-18 sm:px-6">
+        <a href="/" class="flex items-center gap-3" aria-label="Más Mus, inicio">
+          <img src="/icon.webp" alt="" width="40" height="40" class="brand-icon h-10 w-10 rounded-[10px] shadow-md" />
+          <span class="brand-name font-display text-2xl leading-none">Más Mus</span>
+        </a>
+        <nav aria-label="Secciones" class="hidden sm:flex items-center gap-7 text-base font-bold text-ink-dim">
+          <a href="#por-que" class="hover:text-ink transition-colors">Por qué</a>
+          <a href="#rivales" class="hover:text-ink transition-colors">Los bots</a>
+          <a href="#mesa" class="hover:text-ink transition-colors">La mano</a>
+        </nav>
+      </div>
     </header>
 
     <main id="contenido">
       <!-- Hero -->
-      <section class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 pt-12 pb-20 md:grid-cols-[1.1fr_0.9fr] md:pt-20 md:pb-28">
+      <section class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 pt-8 pb-20 md:grid-cols-[1.1fr_0.9fr] md:pt-14 md:pb-28">
         <div>
-          <p class="deal mb-5 inline-flex items-center gap-2 rounded-full bg-chip px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] text-ink-dim">
+          <p class="rise mb-6 inline-flex items-center gap-2 rounded-full bg-chip px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] text-ink-dim">
             <span class="h-2 w-2 rounded-full bg-brass" aria-hidden="true"></span>
             Mus contra bots, para iPhone y Android
           </p>
-          <h1 class="deal font-display text-[3.25rem] leading-[1.02] sm:text-7xl lg:text-[5.5rem]" style="--delay: 80ms">
+          <h1 class="rise font-display text-[3.25rem] leading-[1.02] tracking-[-0.01em] sm:text-7xl lg:text-[5.5rem]" style="--delay: 90ms">
             Más Mus
           </h1>
-          <p class="deal mt-5 max-w-xl font-display text-2xl leading-snug text-ink sm:text-3xl" style="--delay: 160ms">
+          <p class="rise mt-5 max-w-xl font-display text-2xl leading-snug text-ink text-balance sm:text-3xl" style="--delay: 180ms">
             Mus de verdad en el móvil: tú y tu compañero contra dos rivales.
           </p>
-          <p class="deal mt-5 max-w-xl text-ink-dim leading-relaxed" style="--delay: 240ms">
+          <p class="rise mt-5 max-w-xl text-ink-dim leading-relaxed text-pretty" style="--delay: 260ms">
             Con las reglas de los reglamentos, bots que juegan con cabeza y un compañero que te hace señas. Sin conexión, sin cuentas y sin anuncios.
           </p>
 
-          <div class="deal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5" style="--delay: 320ms">
+          <div class="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5" style="--delay: 340ms">
             <p class="inline-flex items-center gap-3 rounded-2xl border border-line px-5 py-3.5 text-base font-bold">
               <svg class="h-5 w-5 shrink-0 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 2"/></svg>
               Próximamente en App Store y Google Play
@@ -89,95 +94,99 @@
         </div>
 
         <div class="relative mx-auto w-full max-w-[17rem] sm:max-w-[19rem] md:max-w-[21rem]">
-          <div class="naipe suit-copas deal absolute -left-28 top-20 hidden h-56 w-36 -rotate-[14deg] sm:block" data-index="12" style="--delay: 200ms; --from-rotate: -4deg" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="absolute inset-0 m-auto h-16 w-16" aria-hidden="true"><path d="M10 10h28c0 10-5 17-11 18v6h6v4H15v-4h6v-6c-6-1-11-8-11-18z" fill="#B1251D" stroke="#2A2723" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <div class="drift absolute -left-28 top-20 hidden sm:block" style="--drift: -56px" aria-hidden="true">
+            <div class="naipe suit-copas fan h-56 w-36 -rotate-[14deg]" data-index="12" style="--delay: 520ms; --fan-x: 55%; --fan-rotate: 14deg">
+              <svg viewBox="0 0 48 48" class="absolute inset-0 m-auto h-16 w-16" aria-hidden="true"><path d="M10 10h28c0 10-5 17-11 18v6h6v4H15v-4h6v-6c-6-1-11-8-11-18z" fill="#B1251D" stroke="#2A2723" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
           </div>
-          <div class="naipe suit-oros deal absolute -right-24 bottom-24 hidden h-56 w-36 rotate-[12deg] sm:block" data-index="1" style="--delay: 260ms; --from-rotate: 4deg" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="absolute inset-0 m-auto h-16 w-16" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="#C28A12" stroke="#2A2723" stroke-width="1.5"/><circle cx="24" cy="24" r="10" fill="#F7EFDC" stroke="#2A2723" stroke-width="1.5"/><circle cx="24" cy="24" r="5" fill="#C28A12" stroke="#2A2723" stroke-width="1.5"/></svg>
+          <div class="drift absolute -right-24 bottom-24 hidden sm:block" style="--drift: -28px" aria-hidden="true">
+            <div class="naipe suit-oros fan h-56 w-36 rotate-[12deg]" data-index="1" style="--delay: 640ms; --fan-x: -55%; --fan-rotate: -12deg">
+              <svg viewBox="0 0 48 48" class="absolute inset-0 m-auto h-16 w-16" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="#C28A12" stroke="#2A2723" stroke-width="1.5"/><circle cx="24" cy="24" r="10" fill="#F7EFDC" stroke="#2A2723" stroke-width="1.5"/><circle cx="24" cy="24" r="5" fill="#C28A12" stroke="#2A2723" stroke-width="1.5"/></svg>
+            </div>
           </div>
-          <figure class="phone deal relative" style="--delay: 120ms">
-            <img src="/screens/table_chica_answer.webp" width="600" height="1305" alt="La mesa de Más Mus: La Temeraria envida 5 a la chica y te toca responder con no quiero, quiero, subir u órdago." />
+          <figure class="phone rise relative" style="--delay: 160ms; --rise: 40px">
+            <img src="/screens/table_chica_answer.webp" width="600" height="1305" fetchpriority="high" alt="La mesa de Más Mus: La Temeraria envida 5 a la chica y te toca responder con no quiero, quiero, subir u órdago." />
           </figure>
         </div>
       </section>
 
-      <div class="seam mx-auto max-w-6xl" aria-hidden="true"></div>
+      <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
 
       <!-- Why -->
       <section id="por-que" class="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28" aria-labelledby="por-que-titulo">
         <div class="max-w-2xl">
-          <p class="mb-3 text-sm font-bold uppercase tracking-[0.14em] text-ink-dim">Para quien sabe jugar y para quien aprende</p>
-          <h2 id="por-que-titulo" class="font-display text-4xl leading-tight sm:text-5xl">Como en la mesa del bar, pero en el bolsillo</h2>
+          <p class="eyebrow">Para quien sabe jugar y para quien aprende</p>
+          <h2 id="por-que-titulo" class="section-title">Como en la mesa del bar, pero en el bolsillo</h2>
         </div>
 
-        <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="naipe suit-oros px-7 pt-10 pb-12" data-index="12">
-            <h3 class="font-display text-2xl leading-snug">Las reglas de los reglamentos</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">Ocho reyes, a 40 y mus corrido en la primera mano, como dicen los reglamentos. Si en tu zona se juega con cuatro reyes o a 30, también. Partidas a un juego o al mejor de tres o de cinco.</p>
+        <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <li class="naipe dealt suit-oros px-7 pt-10 pb-12" data-index="12">
+            <h3 class="font-display text-2xl leading-snug text-balance">Las reglas de los reglamentos</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">Ocho reyes, a 40 y mus corrido en la primera mano, como dicen los reglamentos. Si en tu zona se juega con cuatro reyes o a 30, también. Partidas a un juego o al mejor de tres o de cinco.</p>
           </li>
-          <li class="naipe suit-copas px-7 pt-10 pb-12" data-index="11">
-            <h3 class="font-display text-2xl leading-snug">Reparto limpio</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">La baraja se mezcla al azar y los bots solo ven sus cartas y lo que se dice en la mesa. Al final de cada mano se ven las cuatro manos y el recuento lance a lance, para que puedas comprobar cada tanto.</p>
+          <li class="naipe dealt suit-copas px-7 pt-10 pb-12" data-index="11">
+            <h3 class="font-display text-2xl leading-snug text-balance">Reparto limpio</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">La baraja se mezcla al azar y los bots solo ven sus cartas y lo que se dice en la mesa. Al final de cada mano se ven las cuatro manos y el recuento lance a lance, para que puedas comprobar cada tanto.</p>
           </li>
-          <li class="naipe suit-espadas px-7 pt-10 pb-12" data-index="10">
-            <h3 class="font-display text-2xl leading-snug">Señas con tu compañero</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">Tu compañero te hace las señas con la cara: duples, medias, treinta y una, ciego… Siempre verdaderas. Y si dudas, puedes consultarle qué haría él.</p>
+          <li class="naipe dealt suit-espadas px-7 pt-10 pb-12" data-index="10">
+            <h3 class="font-display text-2xl leading-snug text-balance">Señas con tu compañero</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">Tu compañero te hace las señas con la cara: duples, medias, treinta y una, ciego… Siempre verdaderas. Y si dudas, puedes consultarle qué haría él.</p>
           </li>
-          <li class="naipe suit-bastos px-7 pt-10 pb-12" data-index="7">
-            <h3 class="font-display text-2xl leading-snug">Sin conexión, sin cuentas, sin anuncios</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">Juega en el metro o en el pueblo sin cobertura. No hay registro ni nada que interrumpa la mano, y ningún dato sale de tu móvil. Gratis.</p>
+          <li class="naipe dealt suit-bastos px-7 pt-10 pb-12" data-index="7">
+            <h3 class="font-display text-2xl leading-snug text-balance">Sin conexión, sin cuentas, sin anuncios</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">Juega en el metro o en el pueblo sin cobertura. No hay registro ni nada que interrumpa la mano, y ningún dato sale de tu móvil. Gratis.</p>
           </li>
-          <li class="naipe suit-oros px-7 pt-10 pb-12" data-index="5">
-            <h3 class="font-display text-2xl leading-snug">La mesa se entiende de un vistazo</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">Quién es mano, quién habla, en qué lance estáis y qué hay en juego. Cada cosa que pasa se queda en pantalla el tiempo justo para leerla, y el ritmo de los bots lo eliges tú.</p>
+          <li class="naipe dealt suit-oros px-7 pt-10 pb-12" data-index="5">
+            <h3 class="font-display text-2xl leading-snug text-balance">La mesa se entiende de un vistazo</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">Quién es mano, quién habla, en qué lance estáis y qué hay en juego. Cada cosa que pasa se queda en pantalla el tiempo justo para leerla, y el ritmo de los bots lo eliges tú.</p>
           </li>
-          <li class="naipe suit-copas px-7 pt-10 pb-12" data-index="1">
-            <h3 class="font-display text-2xl leading-snug">Para que juegue todo el mundo</h3>
-            <p class="mt-3 text-card-ink-dim leading-relaxed">Funciona con VoiceOver y TalkBack, que cuentan la mesa jugada a jugada, y con el texto grande del sistema. «Cómo se juega» explica las reglas y el vocabulario del mus.</p>
+          <li class="naipe dealt suit-copas px-7 pt-10 pb-12" data-index="1">
+            <h3 class="font-display text-2xl leading-snug text-balance">Para que juegue todo el mundo</h3>
+            <p class="mt-3 text-card-ink-dim leading-relaxed text-pretty">Funciona con VoiceOver y TalkBack, que cuentan la mesa jugada a jugada, y con el texto grande del sistema. «Cómo se juega» explica las reglas y el vocabulario del mus.</p>
           </li>
         </ul>
       </section>
 
-      <div class="seam mx-auto max-w-6xl" aria-hidden="true"></div>
+      <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
 
       <!-- Bots -->
       <section id="rivales" class="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28" aria-labelledby="rivales-titulo">
         <div class="grid items-start gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
-            <p class="mb-3 text-sm font-bold uppercase tracking-[0.14em] text-ink-dim">Compañero y rivales</p>
-            <h2 id="rivales-titulo" class="font-display text-4xl leading-tight sm:text-5xl">Bots que juegan con cabeza</h2>
-            <p class="mt-6 max-w-xl text-ink-dim leading-relaxed">
+            <p class="eyebrow">Compañero y rivales</p>
+            <h2 id="rivales-titulo" class="section-title">Bots que juegan con cabeza</h2>
+            <p class="mt-6 max-w-xl text-ink-dim leading-relaxed text-pretty">
               Cada bot calcula sus opciones con lo que ve: sus cartas, lo que se ha dicho y las señas de su compañero. Nunca mira las tuyas. Tienen su carácter, así que no juega igual quien farolea que quien solo envida con buena mano.
             </p>
-            <p class="mt-4 max-w-xl text-ink-dim leading-relaxed">
+            <p class="mt-4 max-w-xl text-ink-dim leading-relaxed text-pretty">
               Eliges compañero y, si quieres, también la pareja de rivales.
             </p>
           </div>
 
-          <ul class="grid gap-4 sm:grid-cols-2">
-            <li class="flex items-center gap-4 rounded-2xl border border-line bg-felt-dark/40 p-4">
-              <img src="/faces/prudente.webp" alt="" width="76" height="76" class="h-[4.75rem] w-[4.75rem] shrink-0 rounded-full ring-2 ring-line" loading="lazy" />
+          <ul class="bots-list grid gap-4 sm:grid-cols-2">
+            <li class="bot">
+              <span class="face"><img src="/faces/prudente.webp" alt="" width="76" height="76" loading="lazy" /></span>
               <div>
                 <h3 class="font-display text-xl">El Prudente</h3>
                 <p class="mt-1 text-base text-ink-dim leading-snug">Envida con buena mano; casi no farolea.</p>
               </div>
             </li>
-            <li class="flex items-center gap-4 rounded-2xl border border-line bg-felt-dark/40 p-4">
-              <img src="/faces/temeraria.webp" alt="" width="76" height="76" class="h-[4.75rem] w-[4.75rem] shrink-0 rounded-full ring-2 ring-line" loading="lazy" />
+            <li class="bot">
+              <span class="face"><img src="/faces/temeraria.webp" alt="" width="76" height="76" loading="lazy" /></span>
               <div>
                 <h3 class="font-display text-xl">La Temeraria</h3>
                 <p class="mt-1 text-base text-ink-dim leading-snug">Quiere casi todo; le gusta el órdago.</p>
               </div>
             </li>
-            <li class="flex items-center gap-4 rounded-2xl border border-line bg-felt-dark/40 p-4">
-              <img src="/faces/calculador.webp" alt="" width="76" height="76" class="h-[4.75rem] w-[4.75rem] shrink-0 rounded-full ring-2 ring-line" loading="lazy" />
+            <li class="bot">
+              <span class="face"><img src="/faces/calculador.webp" alt="" width="76" height="76" loading="lazy" /></span>
               <div>
                 <h3 class="font-display text-xl">El Calculador</h3>
                 <p class="mt-1 text-base text-ink-dim leading-snug">Juega las probabilidades.</p>
               </div>
             </li>
-            <li class="flex items-center gap-4 rounded-2xl border border-line bg-felt-dark/40 p-4">
-              <img src="/faces/farolero.webp" alt="" width="76" height="76" class="h-[4.75rem] w-[4.75rem] shrink-0 rounded-full ring-2 ring-line" loading="lazy" />
+            <li class="bot">
+              <span class="face"><img src="/faces/farolero.webp" alt="" width="76" height="76" loading="lazy" /></span>
               <div>
                 <h3 class="font-display text-xl">El Farolero</h3>
                 <p class="mt-1 text-base text-ink-dim leading-snug">Envida sin nada cuando puede.</p>
@@ -187,41 +196,60 @@
         </div>
       </section>
 
-      <div class="seam mx-auto max-w-6xl" aria-hidden="true"></div>
+      <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
 
-      <!-- Screens -->
-      <section id="mesa" class="py-20 md:py-28" aria-labelledby="mesa-titulo">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <p class="mb-3 text-sm font-bold uppercase tracking-[0.14em] text-ink-dim">Así se ve</p>
-          <h2 id="mesa-titulo" class="font-display text-4xl leading-tight sm:text-5xl">Una mano, de principio a fin</h2>
+      <!-- A hand, told as you scroll -->
+      <section id="mesa" class="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28" aria-labelledby="mesa-titulo">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Así se ve</p>
+          <h2 id="mesa-titulo" class="section-title">Una mano, de principio a fin</h2>
         </div>
 
-        <ul class="mx-auto mt-12 flex max-w-6xl snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-6 sm:px-6 lg:grid lg:grid-cols-4 lg:overflow-visible" aria-label="Capturas de la app">
-          <li class="w-[15rem] shrink-0 snap-center lg:w-auto">
-            <figure>
-              <div class="phone"><img src="/screens/new_match.webp" width="600" height="1305" alt="Pantalla de nueva partida: eliges compañero entre los cuatro bots y la pareja de rivales." loading="lazy" /></div>
-              <figcaption class="mt-4 text-base text-ink-dim"><strong class="block font-display text-xl font-normal text-ink">Elige con quién juegas</strong>Tu compañero y tus rivales, cada uno con su forma de jugar.</figcaption>
+        <div class="story mt-12 lg:mt-4">
+          <div class="story-stage" data-story-stage>
+            <figure class="phone story-phone">
+              <img src="/screens/new_match.webp" width="600" height="1305" loading="lazy" data-screen class="is-shown" alt="Pantalla de nueva partida: eliges compañero entre los cuatro bots y la pareja de rivales." />
+              <img src="/screens/table_grande_envite.webp" width="600" height="1305" loading="lazy" data-screen alt="La mesa en la grande: tu compañero, El Calculador, hace la seña de ciego y tú tienes duples de reyes y sietes." />
+              <img src="/screens/table_chica_answer.webp" width="600" height="1305" loading="lazy" data-screen alt="Te envidan 5 a la chica: puedes no querer, querer, subir o echar un órdago." />
+              <img src="/screens/count_won.webp" width="600" height="1305" loading="lazy" data-screen alt="El recuento: las cuatro manos boca arriba y, por cada lance, quién lo gana, con qué y cuántos tantos." />
             </figure>
-          </li>
-          <li class="w-[15rem] shrink-0 snap-center lg:w-auto">
-            <figure>
-              <div class="phone"><img src="/screens/table_grande_envite.webp" width="600" height="1305" alt="La mesa en la grande: tu compañero, El Calculador, hace la seña de ciego y tú tienes duples de reyes y sietes." loading="lazy" /></div>
-              <figcaption class="mt-4 text-base text-ink-dim"><strong class="block font-display text-xl font-normal text-ink">Señas en la mesa</strong>Lo que te dice tu compañero, y lo que le has dicho tú.</figcaption>
-            </figure>
-          </li>
-          <li class="w-[15rem] shrink-0 snap-center lg:w-auto">
-            <figure>
-              <div class="phone"><img src="/screens/table_chica_answer.webp" width="600" height="1305" alt="Te envidan 5 a la chica: puedes no querer, querer, subir o echar un órdago." loading="lazy" /></div>
-              <figcaption class="mt-4 text-base text-ink-dim"><strong class="block font-display text-xl font-normal text-ink">Envites claros</strong>Quién envida, cuánto y qué te cuesta no querer.</figcaption>
-            </figure>
-          </li>
-          <li class="w-[15rem] shrink-0 snap-center lg:w-auto">
-            <figure>
-              <div class="phone"><img src="/screens/count_won.webp" width="600" height="1305" alt="El recuento: las cuatro manos boca arriba y, por cada lance, quién lo gana, con qué y cuántos tantos." loading="lazy" /></div>
-              <figcaption class="mt-4 text-base text-ink-dim"><strong class="block font-display text-xl font-normal text-ink">Recuento a la vista</strong>Las cuatro manos y cada lance, explicado.</figcaption>
-            </figure>
-          </li>
-        </ul>
+          </div>
+
+          <ol class="story-steps">
+            <li class="story-step" data-step>
+              <figure class="phone step-phone"><img src="/screens/new_match.webp" width="600" height="1305" loading="lazy" alt="Pantalla de nueva partida: eliges compañero entre los cuatro bots y la pareja de rivales." /></figure>
+              <div class="step-text">
+                <span class="step-number" aria-hidden="true">1</span>
+                <h3 class="step-title">Elige con quién juegas</h3>
+                <p class="step-body">Tu compañero, entre cuatro bots con su forma de jugar, y la pareja de rivales al azar o a tu gusto. Ocho reyes o cuatro, a 40 o a 30: con un toque estás en la mesa.</p>
+              </div>
+            </li>
+            <li class="story-step" data-step>
+              <figure class="phone step-phone"><img src="/screens/table_grande_envite.webp" width="600" height="1305" loading="lazy" alt="La mesa en la grande: tu compañero, El Calculador, hace la seña de ciego y tú tienes duples de reyes y sietes." /></figure>
+              <div class="step-text">
+                <span class="step-number" aria-hidden="true">2</span>
+                <h3 class="step-title">Señas en la mesa</h3>
+                <p class="step-body">Tu compañero te hace las señas con la cara y debajo queda escrito lo que te ha dicho. Junto a tus cartas, la seña que le has hecho tú.</p>
+              </div>
+            </li>
+            <li class="story-step" data-step>
+              <figure class="phone step-phone"><img src="/screens/table_chica_answer.webp" width="600" height="1305" loading="lazy" alt="Te envidan 5 a la chica: puedes no querer, querer, subir o echar un órdago." /></figure>
+              <div class="step-text">
+                <span class="step-number" aria-hidden="true">3</span>
+                <h3 class="step-title">Envites claros</h3>
+                <p class="step-body">Quién envida, a qué lance y cuánto, y lo que te cuesta no querer. El órdago se echa manteniendo el botón, para que no se escape sin querer.</p>
+              </div>
+            </li>
+            <li class="story-step" data-step>
+              <figure class="phone step-phone"><img src="/screens/count_won.webp" width="600" height="1305" loading="lazy" alt="El recuento: las cuatro manos boca arriba y, por cada lance, quién lo gana, con qué y cuántos tantos." /></figure>
+              <div class="step-text">
+                <span class="step-number" aria-hidden="true">4</span>
+                <h3 class="step-title">Recuento a la vista</h3>
+                <p class="step-body">Al acabar la mano, las cuatro manos boca arriba y, lance a lance, quién se lo lleva, con qué y cuántos tantos. Todo se puede comprobar.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </section>
 
       <!-- Closing -->
@@ -229,7 +257,7 @@
         <div class="mx-auto max-w-3xl rounded-[1.75rem] border border-line bg-felt-dark/50 px-6 py-12 text-center sm:px-12">
           <span class="chip-mark" aria-hidden="true">M</span>
           <h2 id="cierre-titulo" class="mt-6 font-display text-3xl leading-tight sm:text-4xl">¿Hay mus?</h2>
-          <p class="mx-auto mt-4 max-w-lg text-ink-dim leading-relaxed">
+          <p class="mx-auto mt-4 max-w-lg text-ink-dim leading-relaxed text-pretty">
             Más Mus llegará pronto a App Store y Google Play. Si tienes una pregunta o algo que contarnos, escríbenos.
           </p>
           <a href="mailto:info.masmus@larri.dev" class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-card px-7 py-3 font-bold text-on-card shadow-md transition-transform hover:-translate-y-0.5">
