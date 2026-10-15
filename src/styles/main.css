@@ -425,7 +425,7 @@ body {
   .js .story-step {
     display: flex;
     align-items: center;
-    min-height: 80svh;
+    min-height: 62svh;
   }
 
   .js .step-phone {
